@@ -1,1 +1,2 @@
-gpt-j
+gpt-2
+openai
