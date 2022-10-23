@@ -1,38 +1,33 @@
 import streamlit as st
-import gpt-2
+import os
+from dotenv import load_dotenv
+from gpt3_text_generator import GPT3TextGenerator
 
-st.title("GPT-2 Text Generator")
+load_dotenv()
 
-st.markdown("""
-This is a text generator powered by [GPT-2](https://github.com/openai/gpt-2-output-dataset)
+gpt3_api_key = os.getenv("GPT3_API_KEY")
+
+gpt3_generator = GPT3TextGenerator(gpt3_api_key)
+
+st.title("GPT-3 Text Generator")
+
+st.write("""
+
+GPT-3 is a language model that uses deep learning to produce human-like text.
+
+It was created by OpenAI, you can read more about it here: https://openai.com/blog/gpt-3/
+
+This text generator uses the GPT-3 API to generate text.
+
+You can generate text by entering a prompt below.
+
 """)
 
-st.sidebar.title("GPT-2 Text Generator")
+prompt = st.text_input("Prompt")
 
-st.sidebar.markdown("""
-This is a text generator powered by [GPT-2](https://github.com/openai/gpt-2-output-dataset)
-""")
-
-st.sidebar.markdown("""
-## Input
-""")
-
-prompt = st.sidebar.text_area("Enter your prompt", "")
-
-st.sidebar.markdown("""
-## Options
-""")
-
-temperature = st.sidebar.slider("Temperature", 0.0, 1.0, 0.7)
-
-top_p = st.sidebar.slider("Top P", 0.0, 1.0, 0.9)
-
-st.sidebar.markdown("""
-## Output
-""")
-
-st.markdown("""
-## Input
+if prompt:
+    result = gpt3_generator.generate(prompt)
+    st.write(result)
 """)
 
 st.markdown(prompt)
