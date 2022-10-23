@@ -1,16 +1,16 @@
 import streamlit as st
-import gpt_j
+import gpt-2
 
-st.title("GPT-J Text Generator")
+st.title("GPT-2 Text Generator")
 
 st.markdown("""
-This is a text generator powered by [GPT-J](https://github.com/openai/gpt-2-output-dataset)
+This is a text generator powered by [GPT-2](https://github.com/openai/gpt-2-output-dataset)
 """)
 
-st.sidebar.title("GPT-J Text Generator")
+st.sidebar.title("GPT-2 Text Generator")
 
 st.sidebar.markdown("""
-This is a text generator powered by [GPT-J](https://github.com/openai/gpt-2-output-dataset)
+This is a text generator powered by [GPT-2](https://github.com/openai/gpt-2-output-dataset)
 """)
 
 st.sidebar.markdown("""
