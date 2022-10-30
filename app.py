@@ -35,6 +35,5 @@ st.markdown(prompt)
 st.markdown("""
 ## Output
 """)
-"""
-st.markdown(gpt_j.generate(prompt, temperature=temperature, top_p=top_p))
-"""
+
+st.markdown("""gpt_j.generate(prompt, temperature=temperature, top_p=top_p)""")
